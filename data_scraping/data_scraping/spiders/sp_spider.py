@@ -46,7 +46,10 @@ class PwspiderSpider(scrapy.Spider):
                 "garages": property.css(
                     "span.MuiTypography-root.jss121.jss99.jss110.MuiTypography-body1.MuiTypography-noWrap::text"
                 ).getall()[3],
-                "price": property.css("div.jss281 span::text").get(),
+                "price": property.css("div.jss281 span::text")
+                .get()
+                .strip("R$ ")
+                .strip("."),
             }
 
     async def errback(self, failture):
