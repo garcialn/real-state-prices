@@ -3,7 +3,7 @@ name = "real-state-prices"
 version = "0.1.0"
 description = "Application for real state price prediction in São Pauo(SP)-BR"
 license = "MIT"
-authors = ["Lucas NG <garci"]
+authors = ["Lucas NG <garcia@outlook.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -11,7 +11,6 @@ hydra-core = "^1.1.1"
 pdoc3 = "^0.10.0"
 notebook = "^6.4.10"
 pre-commit = "^2.19.0"
-beautifulsoup4 = "^4.11.1"
 mlem = "^0.2.9"
 dagshub = "^0.1.8"
 mlflow = "^1.30.0"
@@ -25,6 +24,7 @@ jupyterlab = "^3.5.0"
 sqlalchemy = "^1.4.44"
 duckdb-engine = "^0.6.5"
 ipython-sql = "^0.4.1"
+polars = "^0.15.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"

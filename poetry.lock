@@ -2436,6 +2436,28 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
+name = "polars"
+version = "0.15.1"
+description = "Blazingly fast DataFrame library"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+typing_extensions = {version = ">=4.0.0", markers = "python_version < \"3.10\""}
+
+[package.extras]
+all = ["polars[connectorx,fsspec,matplotlib,numpy,pandas,pyarrow,timezone,xlsx2csv]"]
+connectorx = ["connectorx"]
+fsspec = ["fsspec"]
+matplotlib = ["matplotlib"]
+numpy = ["numpy (>=1.16.0)"]
+pandas = ["pandas", "pyarrow (>=4.0.0)"]
+pyarrow = ["pyarrow (>=4.0.0)"]
+timezone = ["backports.zoneinfo", "tzdata"]
+xlsx2csv = ["xlsx2csv (>=0.8.0)"]
+
+[[package]]
 name = "pre-commit"
 version = "2.20.0"
 description = "A framework for managing and maintaining multi-language pre-commit hooks."
@@ -3600,7 +3622,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "d53ab74acbdf05d0724ea0ff44d25ef1cad56325f87bb4a1125e379dc30a516c"
+content-hash = "8c0cf95f852e5a1f22a1b4c332941c45e389b48aea755a632ef9480224e9a64e"
 
 [metadata.files]
 aiohttp = [
@@ -4919,6 +4941,14 @@ playwright = [
 pluggy = [
     {file = "pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
     {file = "pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
+]
+polars = [
+    {file = "polars-0.15.1-cp37-abi3-macosx_10_7_x86_64.whl", hash = "sha256:a8f94c76306f9742c7742d81fd5bbe2d8481827614714d121877b396bf17e5ae"},
+    {file = "polars-0.15.1-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:2042ae1e80d6b5a4a60dbeffc68bd3063b588a28c2898561f2c0e93a81c666c4"},
+    {file = "polars-0.15.1-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:5bf736ca0e4d971154648f2a23ac840f128a74c5fc1e7dcd72b456c55bcf0d34"},
+    {file = "polars-0.15.1-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b89afb8e811f469a521bc1a61479953a1ef468ee6237572e2cc2a4a038407666"},
+    {file = "polars-0.15.1-cp37-abi3-win_amd64.whl", hash = "sha256:deeac0a8184d1bd6791c476c905364c1e4f9e924203b1f33e6a5a0f46877706e"},
+    {file = "polars-0.15.1.tar.gz", hash = "sha256:a00ef0f53752ca4a7e33d92fb71ee2ce4e1d336b54e937fadc94dfb9c66fd606"},
 ]
 pre-commit = [
     {file = "pre_commit-2.20.0-py2.py3-none-any.whl", hash = "sha256:51a5ba7c480ae8072ecdb6933df22d2f812dc897d5fe848778116129a681aac7"},

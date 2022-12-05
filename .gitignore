@@ -62,6 +62,8 @@ target/
 .env
 
 # Database
+*.duckdb
+*.wal
 *.db
 *.rdb
 
