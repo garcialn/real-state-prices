@@ -21,10 +21,11 @@ scrapy-playwright = "^0.0.22"
 duckdb = "^0.6.0"
 pyarrow = "^10.0.1"
 jupyterlab = "^3.5.0"
-sqlalchemy = "^1.4.44"
 duckdb-engine = "^0.6.5"
-ipython-sql = "^0.4.1"
 polars = "^0.15.1"
+rise = "^5.7.1"
+jupyter-nbextensions-configurator = "^0.6.1"
+ipywidgets = "^8.0.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
