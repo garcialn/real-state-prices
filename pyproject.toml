@@ -26,6 +26,7 @@ polars = "^0.15.1"
 rise = "^5.7.1"
 jupyter-nbextensions-configurator = "^0.6.1"
 ipywidgets = "^8.0.3"
+seaborn = "^0.12.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
