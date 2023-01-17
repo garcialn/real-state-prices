@@ -62,8 +62,6 @@ target/
 .env
 
 # Database
-*.duckdb
-*.wal
 *.db
 *.rdb
 
@@ -92,10 +90,7 @@ target/
 # pytest cache
 .pytest_cache/
 
-# Hydra logs
-outputs
-
-# Data
-/data/raw
-/data/processed
-/data/final
+# Data and models
+data/*/*
+models/*
+!.gitkeep
