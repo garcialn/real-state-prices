@@ -1,0 +1,16 @@
+artifact_uri: file:///home/garcia-ln/Documentos/real-state-prices/notebooks/mlruns/754660773313286808/e0daa27cbf7843dcba6135e2ced4f7c7/artifacts
+deleted_time: 1674634855003
+end_time: 1674602418768
+entry_point_name: ''
+experiment_id: '754660773313286808'
+lifecycle_stage: deleted
+run_id: e0daa27cbf7843dcba6135e2ced4f7c7
+run_name: notebook_run
+run_uuid: e0daa27cbf7843dcba6135e2ced4f7c7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1674602417808
+status: 4
+tags: []
+user_id: garcia-ln

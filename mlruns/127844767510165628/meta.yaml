@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/127844767510165628
+creation_time: 1677273567024
+experiment_id: '127844767510165628'
+last_update_time: 1677273567024
+lifecycle_stage: active
+name: RealState-Price-Prediction

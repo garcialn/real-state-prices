@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/967907677827320025/79fa3ad2b4a44635a2254cf0cecb6124/artifacts
+deleted_time: 1677024898627
+end_time: 1677024381397
+entry_point_name: ''
+experiment_id: '967907677827320025'
+lifecycle_stage: deleted
+run_id: 79fa3ad2b4a44635a2254cf0cecb6124
+run_name: notebook_run
+run_uuid: 79fa3ad2b4a44635a2254cf0cecb6124
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1677024376297
+status: 3
+tags: []
+user_id: garcia-ln
