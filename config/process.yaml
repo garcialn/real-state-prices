@@ -1,0 +1,42 @@
+use_features: 
+  - city
+  - category
+  - footage
+  - doorms
+  - garages
+  - price
+
+indep_variables:
+  - city
+  - category
+  - footage
+  - doorms
+  - garages
+
+dep_variable:
+  - price
+
+outliers_thershold:
+  category: 
+    - Apartamento 
+    - Casa
+    - Cobertura
+    - Duplex
+    - Studio
+  footage: 500
+  doorms: 6
+  garages: 6
+  price: 5_000_000
+
+category:
+  Apartamento: 1
+  Casa: 2
+  Cobertura: 3
+  Duplex: 4
+  Studio: 5
+
+city:
+  Sao_Paulo: 1
+  Rio_de_Janeiro: 2
+  Belo_Horizonte: 3
+  Porto_Alegre: 4

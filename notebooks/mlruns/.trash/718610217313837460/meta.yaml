@@ -1,7 +1,0 @@
-artifact_location: mlflow-artifacts:/718610217313837460
-creation_time: 1677023265940
-experiment_id: '718610217313837460'
-last_update_time: 1677024155125
-lifecycle_stage: active
-name: real-state-price-prediction
-tags: {}

@@ -46,18 +46,52 @@ pre-commit = "^2.17.0"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
-line-length = 79
-include = '\.pyi?$'
-exclude = '''
-/(
-	\.git
-| \.hg
-| \.mypy_cache
-| \.tox
-| \.venv
-| _build
-| buck-out
-| build   
-)/ 
-'''
+#[tool.black]
+#line-length = 79
+#include = '\.pyi?$'
+#exclude = '''
+#/(
+#	\.git
+#| \.hg
+#| \.mypy_cache
+#| \.tox
+#| \.venv
+#| _build
+#| buck-out
+#| build   
+#)/ 
+#'''
+
+[tools.ruff]
+extend-select = [
+	"B",
+	"BLE",
+	"C4",
+	"ERA",
+	"I",
+	"ICN",
+	"ISC",
+	"N",
+	"NPY",
+	"PGH",
+	"PIE",
+	"Q",
+	"RET",
+	"RSE",
+	"RUF",
+	"S",
+	"SIM",
+	"T20",
+	"TCH",
+	"TUD",
+	"YTT",
+	"ANN201",
+	"ANN202",
+	"ANN204",
+	"ANN205",
+	"ANN206",
+	"E501"
+]
+ignore = ["E402", "B905", "N818", "S101"]
+show-fixes = true
+target-version = "py39"
