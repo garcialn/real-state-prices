@@ -1,21 +1,12 @@
-default:
-  - process: process
-  - model: lgbm-reg
+defaults:
   - _self_
-
-raw: 
-  path: data/raw/properties.parquet
-
-processed:
-  dir: data/processed
-  name: properties_processed.parquet
-  path: ${processed.dir}/${processed.name}
-
-final:
-  dir: data/final
-  name: properties_final.parquet
-  path: ${final.dir}/${final.name}
-
-image:
-  footage_hist: images/footage_hist.png
-  price_hist: images/price_hist.png
+  - process: process_1
+  - model: lgbm-reg
+paths:
+  raw: ${hydra:runtime.cwd}/data/raw/
+  processed: ${hydra:runtime.cwd}/data/processed
+  final: ${hydra:runtime.cwd}/data/final
+files:
+  raw: properties.parquet
+  processed: properties_processed.parquet
+  final: properties_final.parquet

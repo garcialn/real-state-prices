@@ -1,1 +1,5 @@
-name: lgbm_reg
+models:
+  name: lgbm_reg
+params:
+  max_depth: 10
+  booster: lgbm

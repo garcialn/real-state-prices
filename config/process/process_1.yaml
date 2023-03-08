@@ -1,0 +1,27 @@
+features:
+  used_features: 
+    - city
+    - type
+    - footage
+    - doorms
+    - garages
+    - price
+  indep_variables:
+    - city
+    - type
+    - footage
+    - doorms
+    - garages
+  dep_variable:
+    - price
+thershold:
+  type: 
+    - Apartamento 
+    - Casa
+    - Cobertura
+    - Duplex
+    - Studio
+  footage: 500
+  doorms: 6
+  garages: 6
+  price: 5_000_000
