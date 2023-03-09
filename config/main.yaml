@@ -9,4 +9,6 @@ paths:
 files:
   raw: properties.parquet
   processed: properties_processed.parquet
-  final: properties_final.parquet
+  final: 
+    y: y.parquet
+    X: X.parquet

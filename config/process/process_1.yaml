@@ -16,7 +16,7 @@ features:
     - price
 thershold:
   type: 
-    - Apartamento 
+    - Apartamento
     - Casa
     - Cobertura
     - Duplex
