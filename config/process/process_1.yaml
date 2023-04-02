@@ -25,3 +25,6 @@ thershold:
   doorms: 6
   garages: 6
   price: 5_000_000
+mlflow:
+  experiment: Real_State_Predictions
+  tracking_uri: http://127.0.0.1:5000

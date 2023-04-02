@@ -6,6 +6,7 @@ paths:
   raw: ${hydra:runtime.cwd}/data/raw/
   processed: ${hydra:runtime.cwd}/data/processed
   final: ${hydra:runtime.cwd}/data/final
+  model: ${hydra:runtime.cwd}/model
 files:
   raw: properties.parquet
   processed: properties_processed.parquet

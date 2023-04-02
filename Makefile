@@ -7,6 +7,10 @@ install:
 	poetry install
 	poetry run pre-commit install
 
+check:
+	@echo "Ruff is checking for errors..."
+	ruff check . --fix
+
 activate:
 	@echo "Activating virtual environment"
 	poetry shell

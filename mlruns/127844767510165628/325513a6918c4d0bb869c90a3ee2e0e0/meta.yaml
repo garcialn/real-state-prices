@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/127844767510165628/325513a6918c4d0bb869c90a3ee2e0e0/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '127844767510165628'
+lifecycle_stage: active
+run_id: 325513a6918c4d0bb869c90a3ee2e0e0
+run_name: script_run
+run_uuid: 325513a6918c4d0bb869c90a3ee2e0e0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1678809086446
+status: 1
+tags: []
+user_id: garcia-ln
