@@ -12,19 +12,21 @@ class Paths:
     raw: str
     processed: str
     final: str
+    model: str
 
 
 @dataclass
-class FIles:
+class Files:
     raw: str
     processed: str
     final: str
+    pipeline: str
 
 
 @dataclass
 class Features:
-    used_feature: str
-    indep_variables: str
+    used_feature: list[str]
+    indep_variables: list[str]
     dep_variables: str
 
 
@@ -50,10 +52,16 @@ class Params:
 
 
 @dataclass
+class Mlflow:
+    experiment: str
+    tracking_uri: str
+
+
+@dataclass
 class AppConfig:
     defaults: Default
     paths: Paths
-    files: FIles
+    files: Files
     features: Features
     thresholds: Thershold
     models: Models

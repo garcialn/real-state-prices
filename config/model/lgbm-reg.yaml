@@ -2,4 +2,3 @@ name: lgbm_reg
 params:
   max_depth: 13
   learning_rate: .3
-  booster: gbdt

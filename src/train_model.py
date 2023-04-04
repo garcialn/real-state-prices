@@ -1,6 +1,6 @@
 import pickle
-from posixpath import abspath
 
+import bentoml
 import hydra
 import polars as pl
 from hydra.core.config_store import ConfigStore
@@ -17,7 +17,7 @@ cs.store(name="app_config", node=AppConfig)
 
 
 @hydra.main(version_base=None, config_path="../config", config_name="main")
-def train(cfg: AppConfig) -> None:
+def get_model(cfg: AppConfig) -> None:
 
     """
     Get the processed data from path and
@@ -26,7 +26,7 @@ def train(cfg: AppConfig) -> None:
 
     logger.info("Training process started")
 
-    input_path = abspath(cfg.paths.processed)
+    input_path = cfg.paths.processed
     input_data = cfg.files.processed
 
     df = pl.read_parquet(f"{input_path}{input_data}")
@@ -40,7 +40,7 @@ def train(cfg: AppConfig) -> None:
     features = df.drop(columns=["price"])
     X = features.clone().to_pandas()
 
-    final_path = abspath(cfg.paths.final)
+    final_path = cfg.paths.final
     X_path = cfg.files.final.X
     y_path = cfg.files.final.y
 
@@ -65,7 +65,7 @@ def train(cfg: AppConfig) -> None:
 
     logger.warning("Feature transformation done!")
 
-    # Create model the prediction model
+    ## create model the prediction model
 
     params = cfg.model.params
 
@@ -80,13 +80,15 @@ def train(cfg: AppConfig) -> None:
     pipe.fit(X, y)
     logger.warning("Model trained")
 
-    ## Save model
-    model_path = cfg.paths.model
-    with open(model_path, "wb") as f:
+    ## save model
+    pipe_file = f"{cfg.paths.model}{cfg.files.pipeline}"
+    with open(pipe_file, "wb") as f:
         pickle.dump(pipe, f)
 
-    logger.warning(f"Model saved at {model_path}")
+    model = bentoml.sklearn.save_model("lightgbm_reg", pipe)
+
+    logger.warning(f"{model} saved at {pipe_file}")
 
 
 if __name__ == "__main__":
-    train()
+    get_model()
