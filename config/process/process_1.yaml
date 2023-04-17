@@ -1,14 +1,14 @@
 features:
-  used_features: 
-    - city
+  used_features:
     - type
+    - city
     - footage
     - doorms
     - garages
     - price
   indep_variables:
-    - city
     - type
+    - city
     - footage
     - doorms
     - garages

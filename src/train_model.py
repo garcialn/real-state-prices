@@ -1,5 +1,3 @@
-import pickle
-
 import bentoml
 import hydra
 import polars as pl
@@ -34,7 +32,6 @@ def get_model(cfg: AppConfig) -> None:
     logger.warning(f"Imported data from: {input_path}")
 
     ## defining X and y to use on models
-
     target = pl.DataFrame(df["price"])
     y = target.clone().to_pandas()
     features = df.drop(columns=["price"])
@@ -48,7 +45,6 @@ def get_model(cfg: AppConfig) -> None:
     pl.DataFrame(y).write_parquet(f"{final_path}{y_path}")
 
     ## using OneHotEncoder
-
     logger.warning(f"Files saved on: {final_path}")
 
     ohe = OneHotEncoder(handle_unknown="ignore")
@@ -66,7 +62,6 @@ def get_model(cfg: AppConfig) -> None:
     logger.warning("Feature transformation done!")
 
     ## create model the prediction model
-
     params = cfg.model.params
 
     lgbm_regressor = LGBMRegressor(**params)
@@ -79,15 +74,18 @@ def get_model(cfg: AppConfig) -> None:
 
     pipe.fit(X, y)
     logger.warning("Model trained")
+    logger.debug(f"{pipe}")
 
     ## save model
     pipe_file = f"{cfg.paths.model}{cfg.files.pipeline}"
-    with open(pipe_file, "wb") as f:
-        pickle.dump(pipe, f)
+    # with open(pipe_file, "wb") as f:
+    #     pickle.dump(pipe, f)
 
     model = bentoml.sklearn.save_model("lightgbm_reg", pipe)
 
     logger.warning(f"{model} saved at {pipe_file}")
+
+    print(transformer.fit(X))
 
 
 if __name__ == "__main__":

@@ -23,7 +23,6 @@ def process_data(cfg: AppConfig) -> pl.DataFrame:
     """
 
     ## geting the data from the file
-
     raw_path = f"{cfg.paths.raw}{cfg.files.raw}"
     logger.info(f"Data to be loaded: {raw_path}")
 
@@ -45,7 +44,6 @@ def process_data(cfg: AppConfig) -> pl.DataFrame:
     )
 
     ## pre-processing data
-
     logger.info("Start data processing")
 
     df = (
