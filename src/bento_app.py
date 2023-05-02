@@ -10,7 +10,7 @@ from pydantic import BaseModel, validator
 class TypeError(Exception):
     """Error raised when type not listed"""
 
-    def __init__(self, value: str, message: str) -> None:
+    def __init__(self, value: str, message: str) -> super:
         self.value = value
         self.message = message
         super().__init__(message)
@@ -19,7 +19,7 @@ class TypeError(Exception):
 class CityError(Exception):
     """Error raised when city not listed"""
 
-    def __init__(self, value: str, message: str) -> None:
+    def __init__(self, value: str, message: str) -> super:
         self.value = value
         self.message = message
         super().__init__(message)
@@ -28,7 +28,7 @@ class CityError(Exception):
 class FootageError(Exception):
     """Error raised when footage is not between the threshold values"""
 
-    def __init__(self, value: str, message: str) -> None:
+    def __init__(self, value: str, message: str) -> super:
         self.value = value
         self.message = message
         super().__init__(message)
@@ -37,7 +37,7 @@ class FootageError(Exception):
 class DoormsError(Exception):
     """Error raised when doorms is bigger than threshold value"""
 
-    def __init__(self, value: str, message: str) -> None:
+    def __init__(self, value: str, message: str) -> super:
         self.value = value
         self.message = message
         super().__init__(message)
@@ -46,7 +46,7 @@ class DoormsError(Exception):
 class GaragesError(Exception):
     """Error raised when doorms is bigger than threshold value"""
 
-    def __init__(self, value: str, message: str) -> None:
+    def __init__(self, value: str, message: str) -> super:
         self.value = value
         self.message = message
         super().__init__(message)
@@ -61,8 +61,8 @@ svc = bentoml.Service("price_regression", runners=[model_runner])
 ## using pydantic to verify the features dtypes
 
 
-class Lightgbm(BaseModel):
-    """lightgbm model class"""
+class Property(BaseModel):
+    """Prperty class for prediction model"""
 
     type: str = "Apartamento"
     city: str = "Sao_Paulo"
@@ -85,7 +85,7 @@ class Lightgbm(BaseModel):
             )
         return value
 
-    @validator("city")
+    @validator(" city")
     @classmethod
     def city_validation(cls, value):
         available_cities = [
@@ -132,11 +132,11 @@ class Config:
     extra = "forbid"
 
 
-input_spec = JSON(pydantic_model=Lightgbm)
+input_spec = JSON(pydantic_model=Property)
 
 
 @svc.api(input=input_spec, output=NumpyNdarray())
-def price_reg(input_data: Lightgbm) -> np.array:
+def price_reg(input_data: Property) -> np.array:
 
     """
     Perform the Scikit-Learn Pipeline with Lightgbm Regression Model

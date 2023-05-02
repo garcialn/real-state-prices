@@ -1,0 +1,12 @@
+service: "bento_app.py:svc"
+include:
+  - "bento_app.py"
+labels:
+    owner: lucas_ng
+    stage: production
+python:
+  packages:
+    - numpy
+    - pandas
+    - scikit-learn
+    - pydantic
