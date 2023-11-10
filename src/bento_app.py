@@ -60,7 +60,6 @@ svc = bentoml.Service("price_regression", runners=[model_runner])
 
 ## using pydantic to verify the features dtypes
 
-
 class Property(BaseModel):
     """Prperty class for prediction model"""
 
