@@ -39,6 +39,7 @@ pydantic = "^1.10.4"
 lightgbm = "^3.3.5"
 sweetviz = "^2.1.4"
 scikit-optimize = {git = "https://github.com/scikit-optimize/scikit-optimize.git"}
+loguru = "^0.7.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
