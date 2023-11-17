@@ -8,5 +8,5 @@ python:
   packages:
     - numpy
     - pandas
-    - scikit-learn
+    - scikit-learn5
     - pydantic

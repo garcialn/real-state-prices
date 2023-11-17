@@ -21,7 +21,7 @@ def process_data(cfg: AppConfig) -> pl.DataFrame:
     - Clean the data
     - Prepare the data
     """
-
+    
     ## geting the data from the file
     raw_path = f"{cfg.paths.raw}{cfg.files.raw}"
     logger.info(f"Data to be loaded: {raw_path}")

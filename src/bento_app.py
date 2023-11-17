@@ -84,7 +84,7 @@ class Property(BaseModel):
             )
         return value
 
-    @validator(" city")
+    @validator("city")
     @classmethod
     def city_validation(cls, value):
         available_cities = [
